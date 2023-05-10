@@ -1,17 +1,24 @@
+let runningTotal = 0;
+
 function add (a, b) {
-    return a + b;
+    let sum = a + b;
+    return sum;
 }
 
 function subtract (a, b) {
-    return a - b;
+    let difference = a - b;
+    return difference;
 }
 
 function multiply (a, b) {
-    return a * b;
+    let product = a * b;
+    return product;
 }
 
 function divide (a, b) {
-    return a / b;
+    let quotient = a / b;
+    return quotient;
 }
+
 
 
