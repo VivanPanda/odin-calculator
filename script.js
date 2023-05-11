@@ -20,5 +20,8 @@ function divide (a, b) {
     return quotient;
 }
 
+function operate () {
+    
+}
 
 
