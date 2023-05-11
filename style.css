@@ -43,18 +43,21 @@
     height: 60px;
 }
 
+.row-1 {
+    padding-top: 5px;
+}
 
+.row-5 {
+    padding-bottom: 17px;
+}
 
-
-/* hover effect  */
-
-/* button {
+button {
     transition: transform .1s;
 }
 
 button:hover {
     transform: scale(1.1);
-} */
+}
 
 #number-0-button {
     width: 170px;
@@ -101,7 +104,7 @@ button:hover {
     background-color: #505050;
     border-radius: 5px;
     align-items: center;
-    margin: 0;
+    margin-top: 17px;
 }
 
 * {
