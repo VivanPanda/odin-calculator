@@ -15,10 +15,6 @@
     align-items: center;
 }
 
-/* * {
-    border: 2px solid red;
-} */
-
 .row {
     background: #222222;
     display: flex;
@@ -57,6 +53,7 @@ button {
 
 button:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 #number-0-button {
