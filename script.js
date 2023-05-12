@@ -23,6 +23,70 @@ const number7Button = document.querySelector('#number-7-button');
 const number8Button = document.querySelector('#number-8-button');
 const number9Button = document.querySelector('#number-9-button');
 
+let currentUpperText;
+
+// acButton.addEventListener('click', () => {
+//     upperText.style.display = 'none';
+//     resultText.textContent = '0';
+// })
+
+number0Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '0';
+})
+
+number1Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '1';
+})
+
+number2Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '2';
+})
+
+number3Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '3';
+})
+
+number4Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '4';
+})
+
+number5Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '5';
+})
+
+number6Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '6';
+})
+
+number7Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '7';
+})
+
+number8Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '8';
+})
+
+number9Button.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += '9';
+})
+
+divisionButton.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += ' ÷ ';
+})
+
+multiplicationButton.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += ' × ';
+})
+
+subtractionButton.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += ' - ';
+})
+
+additionButton.addEventListener('click', () => {
+    currentUpperText = upperText.innerHTML += ' + ';
+})
+
+
 let runningTotal = 0;
 
 function add (a, b) {
