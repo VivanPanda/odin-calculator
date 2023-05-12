@@ -1,3 +1,6 @@
+// get dom properties
+
+
 let runningTotal = 0;
 
 function add (a, b) {

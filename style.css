@@ -116,14 +116,14 @@ button:hover {
     font-family: 'Roboto', sans-serif;
 }
 
-.result {
+.result-text {
     background-color: #505050;
     color: white;
     font-size: 31px;
     margin-right: 20px;
 }
 
-.display-text {
+.upper-display-text {
     background-color: #505050;
     color: white;
     font-size: 20px;
