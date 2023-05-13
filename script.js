@@ -25,10 +25,42 @@ const number9Button = document.querySelector('#number-9-button');
 
 let currentUpperText;
 
-// acButton.addEventListener('click', () => {
-//     upperText.style.display = 'none';
-//     resultText.textContent = '0';
-// })
+// basic arithmetic functions
+
+function add (a, b) {
+    let sum = a + b;
+    return sum;
+}
+
+function subtract (a, b) {
+    let difference = a - b;
+    return difference;
+}
+
+function multiply (a, b) {
+    let product = a * b;
+    return product;
+}
+
+function divide (a, b) {
+    let quotient = a / b;
+    return quotient;
+}
+
+function operate (a, b, operator) {
+    if (operator === "+") {
+        return add(a, b);
+    }
+    if (operator === "-") {
+        return subtract(a, b);
+    }
+    if (operator === "x") {
+        return multiply(a, b);
+    }
+    if (operator === "÷") {
+        return divide(a, b);
+    }
+}
 
 number0Button.addEventListener('click', () => {
     currentUpperText = upperText.innerHTML += '0';
@@ -86,31 +118,10 @@ additionButton.addEventListener('click', () => {
     currentUpperText = upperText.innerHTML += ' + ';
 })
 
+equalButton.addEventListener('click', () => {
+
+})
 
 let runningTotal = 0;
-
-function add (a, b) {
-    let sum = a + b;
-    return sum;
-}
-
-function subtract (a, b) {
-    let difference = a - b;
-    return difference;
-}
-
-function multiply (a, b) {
-    let product = a * b;
-    return product;
-}
-
-function divide (a, b) {
-    let quotient = a / b;
-    return quotient;
-}
-
-function operate () {
-    
-}
 
 
