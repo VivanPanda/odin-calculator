@@ -136,9 +136,8 @@ additionButton.addEventListener('click', () => {
 })
 
 equalButton.addEventListener('click', () => {
-
+    console.log(currentUpperText)
 })
 
 let runningTotal = 0;
-
 
