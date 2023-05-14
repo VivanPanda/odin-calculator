@@ -23,7 +23,24 @@ const number7Button = document.querySelector('#number-7-button');
 const number8Button = document.querySelector('#number-8-button');
 const number9Button = document.querySelector('#number-9-button');
 
+const value1 = parseInt(document.querySelector('#number-1-button').value);
+const value2 = parseInt(document.querySelector('#number-2-button').value);
+const value3 = parseInt(document.querySelector('#number-3-button').value);
+const value4 = parseInt(document.querySelector('#number-4-button').value);
+const value5 = parseInt(document.querySelector('#number-5-button').value);
+const value6 = parseInt(document.querySelector('#number-6-button').value);
+const value7 = parseInt(document.querySelector('#number-7-button').value);
+const value8 = parseInt(document.querySelector('#number-8-button').value);
+const value9 = parseInt(document.querySelector('#number-9-button').value);
+const value0 = parseInt(document.querySelector('#number-0-button').value);
+const valueDecimal = parseInt(document.querySelector('#decimal-button').value);
+const valueDivision = document.querySelector('#division-button').value;
+const valueMultiplication = document.querySelector('#multiplication-button').value;
+const valueSubtraction = document.querySelector('#subtraction-button').value;
+const valueAddition = document.querySelector('#addition-button').value;
+
 let currentUpperText;
+let currentTotal;
 
 // basic arithmetic functions
 
