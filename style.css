@@ -109,6 +109,7 @@ button:hover {
     align-items: flex-end;
     gap: 2px;
     justify-content: center;
+    overflow: hidden;
 }
 
 * {
