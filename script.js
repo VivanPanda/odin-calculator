@@ -41,6 +41,8 @@ const valueAddition = document.querySelector('#addition-button').value;
 
 let currentUpperText;
 let currentTotal;
+let numbers = [];
+let operators = [];
 
 // basic arithmetic functions
 
@@ -120,24 +122,32 @@ number9Button.addEventListener('click', () => {
 })
 
 divisionButton.addEventListener('click', () => {
-    currentUpperText = upperText.innerHTML += ' ÷ ';
+    numbers.push(parseFloat(upperText.innerHTML));
+    operators.push('/');
+    upperText.innerHTML += ' ÷ ';
 })
 
 multiplicationButton.addEventListener('click', () => {
-    currentUpperText = upperText.innerHTML += ' × ';
+    numbers.push(parseFloat(upperText.innerHTML));
+    operators.push('*');
+    upperText.innerHTML += ' × ';
 })
 
 subtractionButton.addEventListener('click', () => {
-    currentUpperText = upperText.innerHTML += ' - ';
+    numbers.push(parseFloat(upperText.innerHTML));
+    operators.push('-');
+    upperText.innerHTML += ' - ';
 })
 
 additionButton.addEventListener('click', () => {
-    currentUpperText = upperText.innerHTML += ' + ';
+    numbers.push(parseFloat(upperText.innerHTML));
+    operators.push('+');
+    upperText.innerHTML += ' + ';
 })
 
 equalButton.addEventListener('click', () => {
-    console.log(currentUpperText)
+    console.log(numbers);
+    console.log(operators);
 })
 
 let runningTotal = 0;
-
