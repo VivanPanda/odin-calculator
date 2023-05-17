@@ -13,11 +13,27 @@ let operators = [];
 const numberButtons = document.querySelectorAll('.number-button')
 const operatorButtons = document.querySelectorAll('.operation-button')
 
+const additionButton = document.querySelector('#addition-button')
+const subtractionButton = document.querySelector('#subtraction-button')
+const multiplicationButton = document.querySelector('#multiplication-button')
+const divisionButton = document.querySelector('#division-button')
+const equalButton = document.querySelector('#equal-button')
+
 function addNumberToText(e) {
     const buttonValue = e.target.value;
     upperText.innerHTML += buttonValue;
     currentUpperText = upperText.innerHTML;    
+    numbers.push(e.target.value)
 }
+
+function pushToArrayAndUpdateText(e) {
+    operators.push(e.target.value)
+}
+
+divisionButton.addEventListener('click', pushToArrayAndUpdateText)
+multiplicationButton.addEventListener('click', pushToArrayAndUpdateText)
+subtractionButton.addEventListener('click', pushToArrayAndUpdateText)
+additionButton.addEventListener('click', pushToArrayAndUpdateText)
 
 numberButtons.forEach(function (button) {
     button.addEventListener('click', addNumberToText)
@@ -27,6 +43,11 @@ operatorButtons.forEach(function (button) {
     button.addEventListener('click', () => {
 
     })
+})
+
+equalButton.addEventListener('click', () => {
+    console.log(operators)
+    console.log(numbers)
 })
 
 // basic arithmetic functions
