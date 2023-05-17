@@ -49,6 +49,29 @@ operatorButtons.forEach(function (button) {
 equalButton.addEventListener('click', () => {
     if (numbers[0] !== undefined && upperText.innerHTML !== '') {
         numbers.push(parseInt(upperText.innerHTML))
+
+        let num1 = numbers[0];
+        let num2 = numbers[1];
+        let operatorCalculation = operators[0];
+        let answer;
+
+        if (operatorCalculation == '+') {
+            answer = num1 + num2;
+        } 
+
+        if (operatorCalculation == '-') {
+            answer = num1 - num2;
+        } 
+
+        if (operatorCalculation == '*') {
+            answer = num1 * num2;
+        } 
+
+        if (operatorCalculation == '/') {
+            answer = num1 / num2;
+        } 
+
+        resultText.innerHTML = answer;
     }
 
     console.log(operators)
