@@ -23,10 +23,10 @@ function addNumberToText(e) {
     const buttonValue = e.target.value;
     upperText.innerHTML += buttonValue;
     currentUpperText = upperText.innerHTML;    
-    numbers.push(e.target.value)
 }
 
 function pushToArrayAndUpdateText(e) {
+    numbers.push(parseInt(upperText.innerHTML))
     operators.push(e.target.value)
 }
 
