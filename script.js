@@ -10,6 +10,43 @@ let currentTotal;
 let numbers = [];
 let operators = [];
 
+// basic arithmetic functions
+
+function add (a, b) {
+    let sum = a + b;
+    return sum;
+}
+
+function subtract (a, b) {
+    let difference = a - b;
+    return difference;
+}
+
+function multiply (a, b) {
+    let product = a * b;
+    return product;
+}
+
+function divide (a, b) {
+    let quotient = a / b;
+    return quotient;
+}
+
+function operate (a, b, operator) {
+    if (operator === "+") {
+        return add(a, b);
+    }
+    if (operator === "-") {
+        return subtract(a, b);
+    }
+    if (operator === "*") {
+        return multiply(a, b);
+    }
+    if (operator === "/") {
+        return divide(a, b);
+    }
+}
+
 const numberButtons = document.querySelectorAll('.number-button')
 const operatorButtons = document.querySelectorAll('.operation-button')
 
@@ -49,29 +86,10 @@ operatorButtons.forEach(function (button) {
 equalButton.addEventListener('click', () => {
     if (numbers[0] !== undefined && upperText.innerHTML !== '') {
         numbers.push(parseInt(upperText.innerHTML))
-
-        let num1 = numbers[0];
-        let num2 = numbers[1];
-        let operatorCalculation = operators[0];
-        let answer;
-
-        if (operatorCalculation == '+') {
-            answer = num1 + num2;
-        } 
-
-        if (operatorCalculation == '-') {
-            answer = num1 - num2;
-        } 
-
-        if (operatorCalculation == '*') {
-            answer = num1 * num2;
-        } 
-
-        if (operatorCalculation == '/') {
-            answer = num1 / num2;
-        } 
-
-        resultText.innerHTML = answer;
+        let a = numbers[0]
+        let b = numbers[1]
+        let operator = operators[0]
+        resultText.innerHTML = operate(a, b, operator);
     }
 
     console.log(operators)
@@ -79,40 +97,3 @@ equalButton.addEventListener('click', () => {
 
 })
 
-
-// basic arithmetic functions
-
-function add (a, b) {
-    let sum = a + b;
-    return sum;
-}
-
-function subtract (a, b) {
-    let difference = a - b;
-    return difference;
-}
-
-function multiply (a, b) {
-    let product = a * b;
-    return product;
-}
-
-function divide (a, b) {
-    let quotient = a / b;
-    return quotient;
-}
-
-function operate (a, b, operator) {
-    if (operator === "+") {
-        return add(a, b);
-    }
-    if (operator === "-") {
-        return subtract(a, b);
-    }
-    if (operator === "x") {
-        return multiply(a, b);
-    }
-    if (operator === "/") {
-        return divide(a, b);
-    }
-}
