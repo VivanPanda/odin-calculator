@@ -1,7 +1,6 @@
 // get dom properties
 
-const upperText = document.querySelector('.upper-display-text');
-const resultText = document.querySelector('.result-text');
+const upperText = document.querySelector('.result-text');
 const acButton = document.querySelector('#ac-button');
 const ceButton = document.querySelector('#ce-button');
 
@@ -77,19 +76,13 @@ numberButtons.forEach(function (button) {
     button.addEventListener('click', addNumberToText)
 })
 
-operatorButtons.forEach(function (button) {
-    button.addEventListener('click', () => {
-
-    })
-})
-
 equalButton.addEventListener('click', () => {
     if (numbers[0] !== undefined && upperText.innerHTML !== '') {
         numbers.push(parseInt(upperText.innerHTML))
         let a = numbers[0]
         let b = numbers[1]
         let operator = operators[0]
-        resultText.innerHTML = operate(a, b, operator);
+        upperText.innerHTML = operate(a, b, operator);
     }
 
     console.log(operators)
