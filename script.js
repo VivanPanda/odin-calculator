@@ -67,13 +67,22 @@ function pushToArrayAndUpdateText(e) {
     upperText.innerHTML = '';
 }
 
+function checkZero() {
+    if (upperText.innerHTML == 0) {
+      upperText.innerHTML = ''
+    }
+  }
+
 divisionButton.addEventListener('click', pushToArrayAndUpdateText)
 multiplicationButton.addEventListener('click', pushToArrayAndUpdateText)
 subtractionButton.addEventListener('click', pushToArrayAndUpdateText)
 additionButton.addEventListener('click', pushToArrayAndUpdateText)
 
 numberButtons.forEach(function (button) {
-    button.addEventListener('click', addNumberToText)
+    button.addEventListener('click', (e) => {
+        checkZero();
+        addNumberToText(e);
+    })
 })
 
 equalButton.addEventListener('click', () => {
@@ -89,4 +98,3 @@ equalButton.addEventListener('click', () => {
     console.log(numbers)
 
 })
-
