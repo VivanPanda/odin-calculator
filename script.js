@@ -28,6 +28,7 @@ function addNumberToText(e) {
 function pushToArrayAndUpdateText(e) {
     numbers.push(parseInt(upperText.innerHTML))
     operators.push(e.target.value)
+    upperText.innerHTML = '';
 }
 
 divisionButton.addEventListener('click', pushToArrayAndUpdateText)
@@ -46,9 +47,15 @@ operatorButtons.forEach(function (button) {
 })
 
 equalButton.addEventListener('click', () => {
+    if (numbers[0] !== undefined && upperText.innerHTML !== '') {
+        numbers.push(parseInt(upperText.innerHTML))
+    }
+
     console.log(operators)
     console.log(numbers)
+
 })
+
 
 // basic arithmetic functions
 
