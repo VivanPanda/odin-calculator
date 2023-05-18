@@ -96,5 +96,7 @@ equalButton.addEventListener('click', () => {
 
     console.log(operators)
     console.log(numbers)
-
+    
+    numbers = [];
+    operators = [];
 })
