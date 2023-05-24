@@ -67,16 +67,23 @@ function pushToArrayAndUpdateText(e) {
     upperText.innerHTML = '';
 }
 
+function handleOperator(e) {
+    if (numbers.length === 0) {
+      pushToArrayAndUpdateText(e)
+    } else if (numbers.length === 1) {
+    }
+}
+  
 function checkZero() {
     if (upperText.innerHTML == 0) {
       upperText.innerHTML = ''
     }
   }
 
-divisionButton.addEventListener('click', pushToArrayAndUpdateText)
-multiplicationButton.addEventListener('click', pushToArrayAndUpdateText)
-subtractionButton.addEventListener('click', pushToArrayAndUpdateText)
-additionButton.addEventListener('click', pushToArrayAndUpdateText)
+divisionButton.addEventListener('click', handleOperator)
+multiplicationButton.addEventListener('click', handleOperator)
+subtractionButton.addEventListener('click', handleOperator)
+additionButton.addEventListener('click', handleOperator)
 
 numberButtons.forEach(function (button) {
     button.addEventListener('click', (e) => {
@@ -96,7 +103,7 @@ equalButton.addEventListener('click', () => {
 
     console.log(operators)
     console.log(numbers)
-    
+
     numbers = [];
     operators = [];
 })
