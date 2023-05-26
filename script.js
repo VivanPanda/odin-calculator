@@ -78,7 +78,7 @@ function checkZero() {
     if (upperText.innerHTML == 0) {
       upperText.innerHTML = ''
     }
-  }
+}
 
 divisionButton.addEventListener('click', handleOperator)
 multiplicationButton.addEventListener('click', handleOperator)
