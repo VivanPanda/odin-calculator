@@ -108,11 +108,10 @@ equalButton.addEventListener('click', () => {
         let b = numbers[1]
         let operator = operators[0]
         upperText.innerHTML = operate(a, b, operator);
+        numbers = [];
+        operators = [];
     }
 
     console.log(operators)
     console.log(numbers)
-
-    numbers = [];
-    operators = [];
 })
