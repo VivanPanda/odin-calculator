@@ -71,6 +71,15 @@ function handleOperator(e) {
     if (numbers.length === 0) {
       pushToArrayAndUpdateText(e)
     } else if (numbers.length === 1) {
+        pushToArrayAndUpdateText(e)
+        let a = numbers[0]
+        let b = numbers[1]
+        let operator = operators[0]
+        let result = operate(a, b, operator);
+        numbers.pop()
+        numbers[0] = result;
+        operators[0] = operators[1]
+        operators.pop()
     }
 }
   
