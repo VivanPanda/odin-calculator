@@ -115,3 +115,9 @@ equalButton.addEventListener('click', () => {
     console.log(operators)
     console.log(numbers)
 })
+
+acButton.addEventListener('click', () => {
+    upperText.textContent = '0';
+    numbers = [];
+    operators = [];
+})
