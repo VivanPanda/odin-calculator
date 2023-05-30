@@ -107,7 +107,9 @@ equalButton.addEventListener('click', () => {
         let a = numbers[0]
         let b = numbers[1]
         let operator = operators[0]
-        upperText.innerHTML = operate(a, b, operator);
+        let finalValue = (operate(a, b, operator)).toFixed(2);
+        finalValue = finalValue.replace(/\.00$/,''); // regex to remove '.00' at the end
+        upperText.innerHTML = finalValue;
         numbers = [];
         operators = [];
     }
