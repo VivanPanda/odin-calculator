@@ -58,11 +58,11 @@ const equalButton = document.querySelector('#equal-button')
 function addNumberToText(e) {
     const buttonValue = e.target.value;
     upperText.innerHTML += buttonValue;
-    currentUpperText = upperText.innerHTML;    
+    currentUpperText = upperText.innerHTML;   
 }
 
 function pushToArrayAndUpdateText(e) {
-    numbers.push(parseInt(upperText.innerHTML))
+    numbers.push(parseFloat(upperText.innerHTML))
     operators.push(e.target.value)
     upperText.innerHTML = '';
 }
@@ -71,6 +71,15 @@ function handleOperator(e) {
     if (numbers.length === 0) {
       pushToArrayAndUpdateText(e)
     } else if (numbers.length === 1) {
+        pushToArrayAndUpdateText(e)
+        let a = numbers[0]
+        let b = numbers[1]
+        let operator = operators[0]
+        let result = operate(a, b, operator);
+        numbers.pop()
+        numbers[0] = result;
+        operators[0] = operators[1]
+        operators.pop()
     }
 }
   
@@ -94,16 +103,26 @@ numberButtons.forEach(function (button) {
 
 equalButton.addEventListener('click', () => {
     if (numbers[0] !== undefined && upperText.innerHTML !== '') {
-        numbers.push(parseInt(upperText.innerHTML))
+        if (numbers[1] == 0 && operators.includes('/')) {
+            upperText.innerHTML == 'Error'
+        }
+        numbers.push(parseFloat(upperText.innerHTML))
         let a = numbers[0]
         let b = numbers[1]
         let operator = operators[0]
-        upperText.innerHTML = operate(a, b, operator);
+        let finalValue = (operate(a, b, operator)).toFixed(2);
+        finalValue = finalValue.replace(/\.00$/,''); // regex to remove '.00' at the end
+        upperText.innerHTML = finalValue;
+        numbers = [];
+        operators = [];
     }
 
     console.log(operators)
     console.log(numbers)
+})
 
+acButton.addEventListener('click', () => {
+    upperText.textContent = '0';
     numbers = [];
     operators = [];
 })
