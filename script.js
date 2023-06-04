@@ -103,16 +103,17 @@ numberButtons.forEach(function (button) {
 
 equalButton.addEventListener('click', () => {
     if (numbers[0] !== undefined && upperText.innerHTML !== '') {
-        if (numbers[1] == 0 && operators.includes('/')) {
-            upperText.innerHTML == 'Error'
-        }
         numbers.push(parseFloat(upperText.innerHTML))
         let a = numbers[0]
         let b = numbers[1]
         let operator = operators[0]
-        let finalValue = (operate(a, b, operator)).toFixed(2);
-        finalValue = finalValue.replace(/\.00$/,''); // regex to remove '.00' at the end
-        upperText.innerHTML = finalValue;
+        if (numbers[1] == 0 && operators.includes('/')) {
+            upperText.innerHTML = 'Error';
+        } else {
+            let finalValue = (operate(a, b, operator)).toFixed(2);
+            finalValue = finalValue.replace(/\.00$/,''); // regex to remove '.00' at the end
+            upperText.innerHTML = finalValue;
+        }
         numbers = [];
         operators = [];
     }
