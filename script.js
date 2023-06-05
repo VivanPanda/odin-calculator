@@ -3,6 +3,7 @@
 const upperText = document.querySelector('.result-text');
 const acButton = document.querySelector('#ac-button');
 const ceButton = document.querySelector('#ce-button');
+const decimalButton = document.querySelector('#decimal-button')
 
 let currentUpperText;
 let currentTotal;
@@ -111,9 +112,10 @@ equalButton.addEventListener('click', () => {
             upperText.innerHTML = 'Error';
         } else {
             let finalValue = (operate(a, b, operator)).toFixed(2);
-            finalValue = finalValue.replace(/\.00$/,''); // regex to remove '.00' at the end
+            finalValue = finalValue.replace(/(\.\d*?[1-9])0+$/, "$1").replace(/(\.\d*?[0-9])0+$/, "$1").replace(/\.0$/, "").replace(/\.$/, ""); // regex to remove unwanted 0s
             upperText.innerHTML = finalValue;
         }
+
         numbers = [];
         operators = [];
     }
@@ -126,4 +128,10 @@ acButton.addEventListener('click', () => {
     upperText.textContent = '0';
     numbers = [];
     operators = [];
+})
+
+decimalButton.addEventListener('click', () => {
+    if ((upperText.innerHTML).includes('.')) {
+        decimalButton.setAttribute('disabled', '');
+    }
 })
