@@ -58,19 +58,22 @@ const equalButton = document.querySelector('#equal-button')
 
 function addNumberToText(e) {
     const buttonValue = e.target.value;
-    if (!upperText.innerHTML.includes('.') && buttonValue === '.') {
-        upperText.innerHTML += buttonValue;
-    } else if(upperText.innerHTML.includes('.') && buttonValue === '.') {
+    if (!upperText.textContent.includes('.') && buttonValue === '.') {
+        upperText.textContent += buttonValue;
+    } else if(upperText.textContent.includes('.') && buttonValue === '.') {
         return
     } else {
-        upperText.innerHTML += buttonValue;
+        upperText.textContent += buttonValue;
     }
+
+console.log(upperText.textContent)
+console.log(upperText.innerHTML)
 } 
 
 function pushToArrayAndUpdateText(e) {
-    numbers.push(parseFloat(upperText.innerHTML))
+    numbers.push(parseFloat(upperText.textContent))
     operators.push(e.target.value)
-    upperText.innerHTML = '';
+    upperText.textContent = '';
 }
 
 function handleOperator(e) {
@@ -90,8 +93,8 @@ function handleOperator(e) {
 }
   
 function checkZero() {
-    if (upperText.innerHTML == 0) {
-      upperText.innerHTML = ''
+    if (upperText.textContent == 0) {
+      upperText.textContent = ''
     }
 }
 
@@ -108,25 +111,22 @@ numberButtons.forEach(function (button) {
 })
 
 equalButton.addEventListener('click', () => {
-    if (numbers[0] !== undefined && upperText.innerHTML !== '') {
-        numbers.push(parseFloat(upperText.innerHTML))
+    if (numbers[0] !== undefined && upperText.textContent !== '') {
+        numbers.push(parseFloat(upperText.textContent))
         let a = numbers[0]
         let b = numbers[1]
         let operator = operators[0]
         if (numbers[1] == 0 && operators.includes('/')) {
-            upperText.innerHTML = 'Error';
+            upperText.textContent = 'Error';
         } else {
             let finalValue = (operate(a, b, operator)).toFixed(2);
             finalValue = finalValue.replace(/(\.\d*?[1-9])0+$/, "$1").replace(/(\.\d*?[0-9])0+$/, "$1").replace(/\.0$/, "").replace(/\.$/, ""); // regex to remove unwanted 0s
-            upperText.innerHTML = finalValue;
+            upperText.textContent = finalValue;
         }
 
         numbers = [];
         operators = [];
     }
-
-    console.log(operators)
-    console.log(numbers)
 })
 
 acButton.addEventListener('click', () => {
