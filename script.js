@@ -58,9 +58,14 @@ const equalButton = document.querySelector('#equal-button')
 
 function addNumberToText(e) {
     const buttonValue = e.target.value;
-    upperText.innerHTML += buttonValue;
-    currentUpperText = upperText.innerHTML;   
-}
+    if (!upperText.innerHTML.includes('.') && buttonValue === '.') {
+        upperText.innerHTML += buttonValue;
+    } else if(upperText.innerHTML.includes('.') && buttonValue === '.') {
+        return
+    } else {
+        upperText.innerHTML += buttonValue;
+    }
+} 
 
 function pushToArrayAndUpdateText(e) {
     numbers.push(parseFloat(upperText.innerHTML))
@@ -125,13 +130,8 @@ equalButton.addEventListener('click', () => {
 })
 
 acButton.addEventListener('click', () => {
+    decimalButton.removeAttribute('disabled', '');
     upperText.textContent = '0';
     numbers = [];
     operators = [];
-})
-
-decimalButton.addEventListener('click', () => {
-    if ((upperText.innerHTML).includes('.')) {
-        decimalButton.setAttribute('disabled', '');
-    }
 })
