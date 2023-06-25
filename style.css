@@ -130,21 +130,3 @@ button:hover {
     font-size: 20px;
     margin-right: 20px;
 }
-
-@media (max-width: 600px) {
-    .calculator {
-      width: 90%;
-    }
-    
-    .screen {
-      width: 90%;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    .operation-button,
-    .number-button,
-    .orange-button-big {
-      width: 70px;
-    }
-  }
