@@ -135,3 +135,13 @@ acButton.addEventListener('click', () => {
     numbers = [];
     operators = [];
 })
+
+ceButton.addEventListener('click', () => {
+    if (upperText.textContent !== '') {
+      upperText.textContent = upperText.textContent.slice(0, -1);
+    } else if (operators.length > 0) {
+      operators.pop();
+      upperText.textContent = numbers[numbers.length - 1].toString();
+      numbers.pop();
+    }
+});
