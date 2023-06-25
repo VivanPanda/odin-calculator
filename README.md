@@ -1,6 +1,6 @@
 # Calculator
 
-This was `Calculator`, the [*5th project*](https://www.theodinproject.com/lessons/foundations-calculator) within the Odin Project curriculum and the final one in Foundations. This was an assignment designed to consolidate students' knowledge and offer a finale to the Foundations course in a interesting manner.
+This was `Calculator`, the [*5th project*](https://www.theodinproject.com/lessons/foundations-calculator) within the Odin Project curriculum and the final one in Foundations. This was an assignment designed to consolidate students' knowledge and offer a finale to the Foundations course in an interesting manner.
 
 ## Links
 
@@ -32,5 +32,5 @@ This was `Calculator`, the [*5th project*](https://www.theodinproject.com/lesson
 
 ## Images
 
-<img src="screenshots/screenshot-1.png">
-<img src="screenshots/screenshot-2.png">
+<img src="images/screenshot-1.png">
+<img src="images/screenshot-2.png">
