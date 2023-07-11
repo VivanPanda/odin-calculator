@@ -33,4 +33,4 @@ This was `Calculator`, the [*5th project*](https://www.theodinproject.com/lesson
 ## Images
 
 <img src="images/screenshot-1.png">
-<img src="images/screenshot-2.png">
+
